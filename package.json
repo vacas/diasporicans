@@ -1,0 +1,19 @@
+{
+  "name": "diasporicans",
+  "version": "1.0.0",
+  "description": "Webpage for Hurricane Relief. Initial intention for Puerto Ricans in the diaspora to help out in the aftermath of Hurricane María",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfjv88/diasporicans.git"
+  },
+  "author": "Miguel Vacas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfjv88/diasporicans/issues"
+  },
+  "homepage": "https://github.com/mfjv88/diasporicans#readme"
+}
