@@ -1,4 +1,5 @@
 .header-website {
+  width: 500px;
   margin: 100px auto 0;
 }
 
@@ -18,6 +19,18 @@
 
 .facebook-hurricane-block a {
   height: 400px;
+}
+
+#resources ul {
+  padding: 0;
+}
+
+#resources li {
+  list-style-type: none;
+}
+
+#resources a {
+  font-size: 18px;
 }
 
 footer {

@@ -11,7 +11,6 @@ if (process.env.NODE_ENV === 'production') {
 
   connection = mongoose.createConnection("mongodb://" + user + ":" + pwd + "@" + host);
 } else {
-  console.log('hi');
   connection = mongoose.createConnection("mongodb://localhost:27017/diasporicans");
 }
 
