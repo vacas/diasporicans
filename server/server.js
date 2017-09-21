@@ -1,7 +1,9 @@
 const express = require('express'),
       path = require('path'),
       bodyParser = require('body-parser'),
+      nodemailer = require('nodemailer'),
       app = express(),
+      env = require('dotenv').config(),
       port = process.env.PORT || 3000,
       Host = require('./db/host'),
       Donate = require('./db/donate');
@@ -11,12 +13,21 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASS
+  }
+});
+
 app.post('/form/host-center', function(req, res){
   let accepted = false;
   if(req.body.accept === 'on'){
     accepted = true;
   }
-  var result = {
+
+  const result = {
     'first_name': req.body.FirstNameHost,
     'last_name': req.body.LastNameHost,
     'email': req.body.EmailAddressHost,
@@ -24,7 +35,23 @@ app.post('/form/host-center', function(req, res){
     'location': req.body.LocationHost,
     'accepted': accepted
   }
-  console.log(result);
+
+  const mailOptions = {
+    from: process.env.EMAIL,
+    to: process.env.EMAIL,
+    subject: 'Host Center',
+    text: JSON.stringify(result,null,2)
+  };
+
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+
   Host.create(result,function(err, data){
   if (err) {
       res.json({ message: 'Something went wrong'});
@@ -40,7 +67,7 @@ app.post('/form/donate-time', function(req, res){
   if(req.body.accept === 'on'){
     accepted = true;
   }
-  var result = {
+  const result = {
     'first_name': req.body.FirstNameDonate,
     'last_name': req.body.LastNameDonate,
     'email': req.body.EmailAddressDonate,
@@ -49,7 +76,23 @@ app.post('/form/donate-time', function(req, res){
     'howtohelp': req.body.HowToHelp,
     'accepted': accepted
   }
-  console.log(result);
+
+  const mailOptions = {
+    from: process.env.EMAIL,
+    to: process.env.EMAIL,
+    subject: 'Donate Time',
+    text: JSON.stringify(result,null,2)
+  };
+
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+
   Donate.create(result,function(err, data){
   if (err) {
       res.json({ message: 'Something went wrong'});
