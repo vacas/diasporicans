@@ -32,6 +32,7 @@ app.post('/form/host-center', function(req, res){
     'last_name': req.body.LastNameHost,
     'email': req.body.EmailAddressHost,
     'telephone': req.body.TelephoneHost,
+    'date': req.body.TimeHost,
     'location': req.body.LocationHost,
     'accepted': accepted
   }

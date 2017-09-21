@@ -9,6 +9,7 @@ const hostSchema = new Schema({
   email: String,
   telephone: Number,
   location: String,
+  date: Date,
   accepted: Boolean,
   created_at: Date,
   updated_at: Date
