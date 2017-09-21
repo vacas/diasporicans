@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,30 +35,23 @@
               <ul class="dropdown-menu">
                 <li><a href="#locations">Donation Locations</a></li>
                 <li><a href="#host">Host a donation location</a></li>
+                <li><a href="#materials">Materials needed</a></li>
+                <li><a href="#contact-from-PR">No celular signal in PR? Use this!</a></li>
+                <li><a href="#check-on-fb">Check on Facebook for news and Safety Checks</a></li>
+                <li><a href="#funds">Donate to these funds</a></li>
                 <li><a href="#donatetime">Offer professional help</a></li>
                 <li><a href="#resources">Additional Resources</a></li>
               </ul>
             </li>
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Locals <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li> -->
           </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Header -->
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <!-- <h1 class="text-center header-website">Diasporicans</h1> -->
           <img class="img-responsive header-website" src="./assets/images/diasporicans-01.png" alt="">
           <h3 class="text-center header-caption">Uniting the diaspora with the Puerto Rico</h3>
         </div>
@@ -71,9 +65,11 @@
         </div>
       </div>
       <hr>
+
+      <!-- Host a donation center -->
       <div class="row" id="host">
         <div class="col-xs-12">
-          <h3>Don't see your area? Host a donation center!</h3>
+          <h3>Don't see your area? Host a donation center (with an organization, non-for-profit or a for-profit company willing to donate time)!</h3>
           <form method="POST" action="/form/host-center">
             <div class="form-group">
               <label for="FirstNameHost">First Name</label>
@@ -95,13 +91,9 @@
               <label for="Location">Location</label>
               <input name="LocationHost" type="text" class="form-control" id="LocationHost" placeholder="Location">
             </div>
-            <!-- <div class="form-group">
-              <label for="HowToHelp">How would you like to help?</label>
-              <textarea class="form-control" id="HowToHelp" rows="3"></textarea>
-            </div> -->
             <div class="checkbox">
               <label>
-                <input name="accept" type="checkbox"> I accept to be contacted by website organizers.
+                <input name="accept" type="checkbox"> I accept to be contacted by website organizers and have an organization.
               </label>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
@@ -109,7 +101,28 @@
         </div>
       </div>
       <hr>
-      <div class="row">
+
+      <!-- Materials Donation Needed -->
+      <div class="row" id="materials">
+        <div class="col-xs-12 text-center">
+          <h3>Materials for Donation Needed (by <a href="http://unidosporpuertorico.com/en/">Unidos por Puerto Rico</a>):</h3>
+          <div style="max-width: 700px; margin: auto">
+            <p><img class="img-responsive" src="./assets/images/materialsneeded.png" alt="Materials Needed"></p>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Contact from Puerto Rico - Conecta Maria -->
+      <div class="row" id="contact-from-PR">
+        <div class="col-xs-12 text-center">
+          <h3>If your friends or family members have internet, but no cellular signal, send them the link for Conecta Maria (project by Omar Ferrer - <a href="https://github.com/chamakits">Github</a>):<br><br>Free service - <a href="http://conecta-maria.glitch.me/">http://conecta-maria.glitch.me/</a></h3>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Check on Facebook -->
+      <div class="row" id="check-on-fb">
         <div class="col-xs-12">
           <h3>Check on your Facebook for news on Hurricane Maria and if YOUR friends are safe (no need for login):</h3>
         </div>
@@ -131,6 +144,51 @@
         </div>
       </div>
       <hr>
+
+      <!-- Funds to donate -->
+      <div class="row" id="funds">
+        <div class="col-xs-12">
+          <div class="text-center">
+            <h3>Where to donate? Here are some options:</h3>
+            <ul>
+              <li>
+                <p>
+                  <a href="https://www.facebook.com/donate/1661202080577649/">Friends of Puerto Rico - Hurricane Maria Recovery Fund</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://connectrelief.com/donate">Connect Relief Donation</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://www.youcaring.com/loizahurricanerelief-955117">Loiza Hurricane Relief Fundraiser</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://www.generosity.com/emergencies-fundraising/maria-irma-puerto-rico-real-time-recovery-fund">ComPRometidos</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://connect.clickandpledge.com/w/Form/cb4a3c78-5694-4324-bead-42c8ad94c1bf">The Hurricane Maria Community Relief & Recovery</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://www.amazon.com/registry/wishlist/23ALCJDYZICT7/ref=cm_sw_r_cp_ep_ws_.TuWzbZGY4S7T">Solidarity Brigade for Puerto Rico Amazon Registry</a> <br>
+                  For more information on how to help out Solidarity Brigade, check last item on <a href="http://www.losambulantes.com/help-puerto-rico/">THIS list</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Donate your time -->
       <div class="row" id="donatetime">
         <div class="col-xs-12">
           <h3>Want to help out? Donate your time!</h3>
@@ -169,6 +227,8 @@
         </div>
       </div>
       <hr>
+
+      <!-- Resources -->
       <div class="row" id="resources">
         <div class="col-xs-12">
           <div class="text-center">
@@ -178,11 +238,20 @@
                 <p>
                   <a href="http://bit.ly/hurricane-maria-tech">Donate time for Hurricane Maria Relief - Tech Community <b>(Recommended)</b></a>
                 </p>
+              </li>
+              <li>
                 <p>
                   <a href="https://connectrelief.com/">Connect Relief</a>
                 </p>
+              </li>
+              <li>
                 <p>
                   <a href="https://www.facebook.com/donate/1661202080577649/">Hurricane Maria Recovery Fund</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="http://unidosporpuertorico.com/en/">Unidos por Puerto Rico</a>
                 </p>
               </li>
             </ul>
@@ -190,6 +259,8 @@
         </div>
       </div>
       <hr>
+
+      <!-- Footer -->
       <div class="row">
         <div class="col-xs-12">
           <footer>

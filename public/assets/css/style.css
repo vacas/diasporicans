@@ -21,15 +21,15 @@
   height: 400px;
 }
 
-#resources ul {
+#funds ul, #resources ul {
   padding: 0;
 }
 
-#resources li {
+#funds li, #resources li {
   list-style-type: none;
 }
 
-#resources a {
+#funds a, #resources a {
   font-size: 18px;
 }
 
