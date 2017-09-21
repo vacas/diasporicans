@@ -1,0 +1,25 @@
+.header-website {
+  margin: 100px auto 0;
+}
+
+.header-caption {
+  text-decoration: underline;
+}
+
+.diaspora-donation-map {
+  margin: 50px auto;
+  width: 640px;
+  height: 480px;
+}
+
+.facebook-hurricane-block{
+  text-align: center;
+}
+
+.facebook-hurricane-block a {
+  height: 400px;
+}
+
+footer {
+  margin: 10px auto 30px;
+}
