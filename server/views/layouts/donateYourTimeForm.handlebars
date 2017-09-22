@@ -1,0 +1,42 @@
+{{#> layout}}
+<!-- Donate your time -->
+<div class="row" id="donatetime">
+  <div class="col-xs-12">
+    <h3>Want to help out? Donate your time! (You don't have to be Puerto Rican to donate time)</h3>
+    <form method="POST" action="/form/donate-time">
+      <div class="form-group">
+        <label for="FirstNameDonate">First Name</label>
+        <input name="FirstNameDonate" type="text" class="form-control" id="FirstNameDonate" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label for="LastNameDonate">Last Name</label>
+        <input name="LastNameDonate" type="text" class="form-control" id="LastNameDonate" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <label for="EmailDonate">Email address</label>
+        <input name="EmailAddressDonate" type="email" class="form-control" id="EmailDonate" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="TelephoneDonate">Telephone</label>
+        <input name="TelephoneDonate" type="tel" class="form-control" id="TelephoneDonate" placeholder="Telephone">
+      </div>
+      <div class="form-group">
+        <label for="ProfessionDonate">Profession</label>
+        <input name="ProfessionalDonate" type="text" class="form-control" id="ProfessionDonate" placeholder="Profession">
+      </div>
+      <div class="form-group">
+        <label for="HowToHelpDonate">How would you like to help?</label>
+        <textarea name="HowToHelp" class="form-control" id="HowToHelpDonate" rows="3"></textarea>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input name="accept" type="checkbox"> I take full responsibility for the logistics of donating time to Puerto Rico.
+        </label>
+      </div>
+      <p> By submitting, I accept to be contacted by website organizers if any doubts come up and accept that all donations will be FULLY used for Hurricane Relief in Puerto Rico (i.e. No personal profits)</p>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</div>
+<hr>
+{{/layout}}

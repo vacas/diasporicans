@@ -2,6 +2,7 @@ const express = require('express'),
       path = require('path'),
       bodyParser = require('body-parser'),
       nodemailer = require('nodemailer'),
+      exphbs  = require('express-handlebars'),
       app = express(),
       env = require('dotenv').config(),
       port = process.env.PORT || 3000,
@@ -9,9 +10,22 @@ const express = require('express'),
       Donate = require('./db/donate');
 
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../views')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+
+
+var hbs = exphbs.create({
+    defaultLayout: 'main',
+    partialsDir: [
+        'views/layouts/',
+    ]
+});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+// app.set('views', '../views')
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -19,6 +33,11 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL,
     pass: process.env.PASS
   }
+});
+
+
+app.get('/', function (req, res) {
+    res.render('home');
 });
 
 app.post('/form/host-center', function(req, res){

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106831938-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-106831938-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="http://www.diasporicans.com/assets/images/diasporicans-01.png"/>
+    <meta property="og:title" content="Diasporicans - Uniting the diaspora with the Puerto Rico "/>
+    <meta property="og:url" content="http://www.diasporicans.com"/>
+    <meta property="og:site_name" content="Diasporicans"/>
+    <meta property="og:type" content="website"/>
+    <title>Diasporicans - Uniting the diaspora with the Puerto Rico</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    {{!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">🇵🇷</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Diaspora <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#locations">Donation Locations</a></li>
+                <li><a href="#host">Host a donation location</a></li>
+                <li><a href="#materials">Materials needed</a></li>
+                <li><a href="#contact-from-PR">No celular signal in PR? Use this!</a></li>
+                <li><a href="#check-on-fb">Check on Facebook for news and Safety Checks</a></li>
+                <li><a href="#funds">Donate to these funds</a></li>
+                <li><a href="#donatetime">Offer professional help</a></li>
+                <li><a href="#resources">Additional Resources</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> --}}
+
+    <!-- Header -->
+    <div class="container">
+      {{> header}}
+
+      {{> hostADonationForm}}
+
+      <!-- Materials Donation Needed -->
+      <div class="row" id="materials">
+        <div class="col-xs-12 text-center">
+          <h3>Materials for Donation Needed (by <a href="http://unidosporpuertorico.com/en/">Unidos por Puerto Rico</a>):</h3>
+          <div style="max-width: 700px; margin: auto">
+            <p><img class="img-responsive" src="./assets/images/materialsneeded.png" alt="Materials Needed"></p>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Contact from Puerto Rico - Conecta Maria -->
+      <div class="row" id="contact-from-PR">
+        <div class="col-xs-12 text-center">
+          <h3>If your friends or family members have internet, but no cellular signal, send them the link for Conecta Maria (project by Omar Ferrer - <a href="https://github.com/chamakits">Github</a>):<br><br>Free service - <a href="http://conecta-maria.glitch.me/">http://conecta-maria.glitch.me/</a></h3>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Check on Facebook -->
+      <div class="row" id="check-on-fb">
+        <div class="col-xs-12">
+          <h3>Check on your Facebook for news on Hurricane Maria and if YOUR friends are safe (no need for login):</h3>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="facebook-hurricane-block">
+            <a class="thumbnail" href="https://www.facebook.com/safetycheck/hurricane-maria-sep17-2017/">
+              <img class="img-responsive" src="https://external-iad3-1.xx.fbcdn.net/safe_image.php?d=AQBFMmGYeNXLG-KR&w=500&h=220&url=https%3A%2F%2Fcbsnews1.cbsistatic.com%2Fhub%2Fi%2F2017%2F09%2F20%2F223fec33-290c-4bd8-876d-52bb1d2815dc%2Frtx3h5r3.jpg&cfs=1&upscale=1&_nc_hash=AQDYGVIYzLOYKKrf" alt="" style="padding: 85px 0">
+            </a>
+            <a href="https://www.facebook.com/safetycheck/hurricane-maria-sep17-2017/"><p>Check for news on Facebook</p></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="facebook-hurricane-block">
+            <a class="thumbnail" href="https://www.facebook.com/safetycheck/hurricane-maria-sep17-2017/friends/">
+              <img class="img-responsive" src="https://cdn.vox-cdn.com/thumbor/sqkFOIELkFSuWnkRnE6LNKnfEHQ=/0x0:926x617/1820x1213/filters:focal(389x235:537x383):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/56290759/safetycheck.0.jpg" alt="">
+            </a>
+            <a href="https://www.facebook.com/safetycheck/hurricane-maria-sep17-2017/friends/"><p>Check for your friends</p></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      {{> whereToDonate}}
+
+      {{> donateYourTimeForm}}
+
+      <!-- Resources -->
+      <div class="row" id="resources">
+        <div class="col-xs-12">
+          <div class="text-center">
+            <h3>Additional resources:</h3>
+            <ul>
+              <li>
+                <p>
+                  <a href="http://bit.ly/hurricane-maria-tech">Donate time for Hurricane Maria Relief - Tech Community <b>(Recommended)</b></a>
+                </p>
+              </li>
+              <li>
+                <li>
+                  <p>
+                    <a href="https://www.facebook.com/standupforpuertorico/">Stand Up for Puerto Rico (Facebook Page)</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="http://unidosporpuertorico.com/en/">Unidos por Puerto Rico</a>
+                  </p>
+                </li>
+                <p>
+                  <a href="https://connectrelief.com/">Connect Relief</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://www.facebook.com/donate/1661202080577649/">Hurricane Maria Recovery Fund</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://www.facebook.com/groups/153188931945861/">Puerto Rico Maria Updates (Facebook Group)</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Footer -->
+      <div class="row">
+        <div class="col-xs-12">
+          <footer>
+            This website is <a href="https://github.com/mfjv88/diasporicans">open-source</a> and not affiliated to any specific organization. Just an attempt to help out our island. Any help would help and gratefully accepted; You don't need to be Puerto Rican to do so.
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js" type="text/javascript"></script>
+    <script src="./assets/js/combodate.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function(){
+        $('#TimeHost').combodate({
+          minYear: 2017,
+          maxYear:2017,
+          smartDays: true
+        });
+      })
+    </script>
+  </body>
+</html>

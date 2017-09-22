@@ -21,7 +21,9 @@
     "body-parser": "^1.18.1",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
+    "handlebars": "^4.0.10",
     "mongoose": "^4.10.2",
-    "nodemailer": "^4.1.0"
+    "nodemailer": "^4.1.0",
+    "nodemon": "^1.12.1"
   }
 }
