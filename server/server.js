@@ -10,7 +10,7 @@ const express = require('express'),
       Donate = require('./db/donate');
 
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.static(path.join(__dirname, '../views')));
+app.use(express.static(path.join(__dirname, '../server/views')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
