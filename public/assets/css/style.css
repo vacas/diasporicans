@@ -2,6 +2,17 @@
   font-family: 'Muli', sans-serif;
 }
 
+.nav-icons, .nav-text {
+  color: white;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.navbar-nav>li>a.nav-text {
+  color: white;
+  margin: 0
+}
+
 .header-website {
   width: 500px;
   margin: 100px auto 0;
@@ -48,4 +59,3 @@ iframe {
   width: 100%;
   height: 100%;
 }
-

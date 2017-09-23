@@ -1,0 +1,33 @@
+{{#> layout}}
+<!-- Donate your time -->
+<div class="row" id="contactus">
+  <div class="col-xs-12">
+    <h3>Contact us:</h3>
+    <form method="POST" action="/form/contactus">
+      <div class="form-group">
+        <label for="FirstNameContact">First Name</label>
+        <input name="FirstNameContact" type="text" class="form-control" id="FirstNameContact" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label for="LastNameContact">Last Name</label>
+        <input name="LastNameContact" type="text" class="form-control" id="LastNameContact" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <label for="EmailContact">Email address</label>
+        <input name="EmailAddressContact" type="email" class="form-control" id="EmailContact" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="TelephoneContact">Telephone</label>
+        <input name="TelephoneContact" type="tel" class="form-control" id="TelephoneContact" placeholder="Telephone">
+      </div>
+      <div class="form-group">
+        <label for="MessageContact">Message:</label>
+        <textarea name="MessageContact" class="form-control" id="MessageContact" rows="3"></textarea>
+      </div>
+      <p> By submitting, I accept to be contacted by website organizers</p>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</div>
+<hr>
+{{/layout}}
