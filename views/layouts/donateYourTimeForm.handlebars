@@ -3,22 +3,22 @@
 <div class="row" id="donatetime">
   <div class="col-xs-12">
     <h3>Want to help out? Donate your time! (You don't have to be Puerto Rican to donate time)</h3>
-    <form method="POST" action="/form/donate-time">
+    <form method="POST" action="/form/donate-time" data-toggle="validator" role="form" id="donate-time-form">
       <div class="form-group">
         <label for="FirstNameDonate">First Name</label>
-        <input name="FirstNameDonate" type="text" class="form-control" id="FirstNameDonate" placeholder="First Name">
+        <input name="FirstNameDonate" type="text" class="form-control" id="FirstNameDonate" placeholder="First Name" required>
       </div>
       <div class="form-group">
         <label for="LastNameDonate">Last Name</label>
-        <input name="LastNameDonate" type="text" class="form-control" id="LastNameDonate" placeholder="Last Name">
+        <input name="LastNameDonate" type="text" class="form-control" id="LastNameDonate" placeholder="Last Name" required>
       </div>
       <div class="form-group">
         <label for="EmailDonate">Email address</label>
-        <input name="EmailAddressDonate" type="email" class="form-control" id="EmailDonate" placeholder="Email">
+        <input name="EmailAddressDonate" type="email" class="form-control" id="EmailDonate" placeholder="Email" required>
       </div>
       <div class="form-group">
         <label for="TelephoneDonate">Telephone</label>
-        <input name="TelephoneDonate" type="tel" class="form-control" id="TelephoneDonate" placeholder="Telephone">
+        <input name="TelephoneDonate" type="number" class="form-control" id="TelephoneDonate" placeholder="Telephone">
       </div>
       <div class="form-group">
         <label for="ProfessionDonate">Profession</label>
@@ -30,7 +30,7 @@
       </div>
       <div class="checkbox">
         <label>
-          <input name="accept" type="checkbox"> I understand that this information could be shared with third parties that would need my help and this is on a volunteer basis.
+          <input name="accept" type="checkbox" required> I understand that this information could be shared with third parties that would need my help and this is on a volunteer basis.
         </label>
       </div>
       <p> By submitting, I accept to be contacted by website organizers if any doubts come up and accept that all donations will be FULLY used for Hurricane Relief in Puerto Rico (i.e. No personal profits)</p>

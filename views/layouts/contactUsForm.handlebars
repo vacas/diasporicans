@@ -3,22 +3,22 @@
 <div class="row" id="contactus">
   <div class="col-xs-12">
     <h3>Contact us:</h3>
-    <form method="POST" action="/form/contactus">
+    <form method="POST" action="/form/contactus" data-toggle="validator" role="form" id="contactus-form">
       <div class="form-group">
         <label for="FirstNameContact">First Name</label>
-        <input name="FirstNameContact" type="text" class="form-control" id="FirstNameContact" placeholder="First Name">
+        <input name="FirstNameContact" type="text" class="form-control" id="FirstNameContact" placeholder="First Name" required>
       </div>
       <div class="form-group">
         <label for="LastNameContact">Last Name</label>
-        <input name="LastNameContact" type="text" class="form-control" id="LastNameContact" placeholder="Last Name">
+        <input name="LastNameContact" type="text" class="form-control" id="LastNameContact" placeholder="Last Name" required>
       </div>
       <div class="form-group">
         <label for="EmailContact">Email address</label>
-        <input name="EmailAddressContact" type="email" class="form-control" id="EmailContact" placeholder="Email">
+        <input name="EmailAddressContact" type="email" class="form-control" id="EmailContact" placeholder="Email" required>
       </div>
       <div class="form-group">
         <label for="TelephoneContact">Telephone</label>
-        <input name="TelephoneContact" type="tel" class="form-control" id="TelephoneContact" placeholder="Telephone">
+        <input name="TelephoneContact" type="number" class="form-control" id="TelephoneContact" placeholder="Telephone">
       </div>
       <div class="form-group">
         <label for="MessageContact">Message:</label>
