@@ -99,6 +99,7 @@ router.post('/form/donate-time', function(req, res){
   if(req.body.accept === 'on'){
     accepted = true;
   }
+  
   // Getting details about form
   const result = {
     'first_name': req.body.FirstNameDonate,
