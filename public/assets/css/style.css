@@ -22,6 +22,21 @@
   margin: 0 auto;
 }
 
+table {
+  width: 100%;
+  background-color: rgba(0,0,0,0.1);
+}
+
+table, tbody, td {
+  border: 1px grey solid;
+}
+
+.color-legend {
+  height: 10px;
+  width: 50px;
+  display: inline-grid;
+}
+
 .maria-tech-brigade-effort-link{
   color: black;
 }
@@ -47,6 +62,11 @@
 
 .facebook-hurricane-block a {
   height: 400px;
+}
+
+#antennas-in-PR > div {
+  height: 580px;
+  margin-bottom: 50px;
 }
 
 #funds ul, #resources ul {

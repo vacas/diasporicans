@@ -1,0 +1,32 @@
+{{#> layout}}
+<!-- Antennas in Puerto Rico -->
+<div class="row" id="antennas-in-PR">
+  <div class="col-xs-12 text-center">
+    <h3>Serviceable Antennas in Puerto Rico (Data by <a href="https://www.fcc.gov/maria">FCC</a> and Map by Jason Suarez - <a href="https://github.com/jsuarezatzendesk/">Github</a>) </h3>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3" class="text-center">
+            Map Legend - Municipalities without service
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            More than 85% <span class="color-legend" style="background-color:rgba(255,0,0,0.3)"></span>
+          </td>
+          <td>
+            85% to 40% <span class="color-legend" style="background-color:rgba(255,255,0,0.8)"></span>
+          </td>
+          <td>
+            Less than 40% <span class="color-legend" style="background-color:rgba(0,255,0,0.3)"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="https://embed.github.com/view/geojson/jsuarezatzendesk/pr/master/maps/cell-sites.geojson?height=1000&width=700"></script>
+  </div>
+</div>
+<hr>
+{{/layout}}
