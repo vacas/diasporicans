@@ -8,11 +8,6 @@ const express = require('express'),
       Host = require('./db/host'),
       Donate = require('./db/donate');
 
-const Lob = require('lob')('test_80993160115decb02bb7feca4fab4c6f056', {
-  apiVersion: '2017-09-08'
-});
-
-
 // Configuration for nodemailer
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -48,9 +43,12 @@ router.post('/form/host-center', function(req, res){
     'email': req.body.EmailAddressHost,
     'telephone': req.body.TelephoneHost,
     'date': req.body.TimeHost,
-    'location': req.body.StreetAddressHost + ', ' + req.body.CityHost + ' ' + req.body.StateHost + ' ' + req.body.ZipHost,
+    'location': req.body.LocationHost,
+    'created_date': new Date(),
     'accepted': accepted
   }
+
+  console.log(result);
 
   // Setting options for delivery for Diasporicans
   const mailOptions_to_diasporicans = {
@@ -60,56 +58,42 @@ router.post('/form/host-center', function(req, res){
     text: JSON.stringify(result,null,2)
   };
 
-  // console.log(Lob.usVerifications);
-
-  // Verifying with Lob
-  Lob.usVerifications.verify({
-    primary_line: req.body.StreetAddressHost,
-    city: req.body.CityHost,
-    state: req.body.StateHost,
-    zip_code: req.body.ZipHost
-  }, function (err, res) {
-    // console.log (err, res);
-  });
-
-  res.redirect('/');
-
 
   // // Setting options for delivery for sender
-  // const mailOptions_to_sender = {
-  //   from: process.env.EMAIL,
-  //   to: result.email,
-  //   subject: 'Thank you for contacting us',
-  //   html: message('Hosting a Donation Center')
-  // };
-  //
-  // // Deliver message to Diasporicans
-  // transporter.sendMail(mailOptions_to_diasporicans, function(error, info){
-  //   if (error) {
-  //     console.log(error);
-  //   } else {
-  //     console.log('Email sent: ' + info.response);
-  //   }
-  // });
-  //
-  // // Deliver message to sender
-  // transporter.sendMail(mailOptions_to_sender, function(error, info){
-  //   if (error) {
-  //     console.log(error);
-  //   } else {
-  //     console.log('Email sent: ' + info.response);
-  //   }
-  // });
+  const mailOptions_to_sender = {
+    from: process.env.EMAIL,
+    to: result.email,
+    subject: 'Thank you for contacting us',
+    html: message('Hosting a Donation Center')
+  };
+
+  // Deliver message to Diasporicans
+  transporter.sendMail(mailOptions_to_diasporicans, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+
+  // Deliver message to sender
+  transporter.sendMail(mailOptions_to_sender, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
 
   // Store in DB
-  // Host.create(result,function(err, data){
-  // if (err) {
-  //     res.json({ message: 'Something went wrong'});
-  //     res.send(err);
-  //  } else {
-  //    res.status(202).redirect('/');
-  //  }
-  // })
+  Host.create(result,function(err, data){
+  if (err) {
+      res.json({ message: 'Something went wrong'});
+      res.send(err);
+   } else {
+     res.status(202).redirect('/');
+   }
+  })
 })
 
 
@@ -128,6 +112,7 @@ router.post('/form/donate-time', function(req, res){
     'telephone': req.body.TelephoneDonate,
     'profession': req.body.ProfessionalDonate,
     'howtohelp': req.body.HowToHelp,
+    'created_date': new Date(),
     'accepted': accepted
   }
 
@@ -187,6 +172,7 @@ router.post('/form/contactus', function(req, res){
     'email': req.body.EmailAddressContact,
     'telephone': req.body.TelephoneContact,
     'profession': req.body.ProfessionalContact,
+    'created_date': new Date(),
     'message': req.body.MessageContact
   }
 
