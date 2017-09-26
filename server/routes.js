@@ -48,8 +48,6 @@ router.post('/form/host-center', function(req, res){
     'accepted': accepted
   }
 
-  console.log(result);
-
   // Setting options for delivery for Diasporicans
   const mailOptions_to_diasporicans = {
     from: process.env.EMAIL,
