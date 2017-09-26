@@ -64,9 +64,12 @@ table, tbody, td {
   height: 400px;
 }
 
+#antennas-in-PR {
+  margin-bottom: 150px;
+}
+
 #antennas-in-PR > div {
   height: 580px;
-  margin-bottom: 50px;
 }
 
 #funds ul, #resources ul {
