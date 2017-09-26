@@ -22,13 +22,22 @@
   margin: 0 auto;
 }
 
+.maria-tech-brigade-effort-link{
+  color: black;
+}
+
 .header-caption {
   text-decoration: underline;
 }
 
+.medium-image{
+  width: 100px;
+  height: auto;
+  margin-top: 0;
+}
+
 .diaspora-donation-map {
   margin: 50px auto;
-
   height: 480px;
 }
 

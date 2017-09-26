@@ -1,6 +1,6 @@
 {{#> layout}}
 <!-- Host a donation center -->
-<div class="row" id="host">
+<!-- <div class="row" id="host">
   <div class="col-xs-12">
     <h3>Don't see your area? Host a donation center (with an organization, non-for-profit or a for-profit company willing to donate time; You don't have to be Puerto Rican to host)!</h3>
     <form method="POST" action="/form/host-center" data-toggle="validator" role="form" id="host-center-form">
@@ -10,7 +10,7 @@
       </div>
       <div class="form-group">
         <label for="LastNameHost">Last Name</label>
-        <input name="LastNameHost" type="text" class="form-control" id="LastNameHost" placeholder="Last Name"required>
+        <input name="LastNameHost" type="text" class="form-control" id="LastNameHost" placeholder="Last Name" required>
       </div>
       <div class="form-group">
         <label for="EmailHost">Email address</label>
@@ -18,11 +18,23 @@
       </div>
       <div class="form-group">
         <label for="TelephoneHost">Telephone</label>
-        <input name="TelephoneHost" type="number" class="form-control" id="TelephoneHost" placeholder="Telephone" required>
+        <input name="TelephoneHost" type="tel" class="form-control" id="TelephoneHost" placeholder="Telephone" required>
       </div>
       <div class="form-group">
-        <label for="Location">Location</label>
-        <input name="LocationHost" type="text" class="form-control" id="LocationHost" placeholder="Location" required>
+        <label for="StreetAddress">Street Address</label>
+        <input name="StreetAddressHost" type="text" class="form-control" id="StreetAddressHost" placeholder="Street Address" required>
+      </div>
+      <div class="form-group">
+        <label for="City">City</label>
+        <input name="CityHost" type="text" class="form-control" id="CityHost" placeholder="City" required>
+      </div>
+      <div class="form-group">
+        <label for="State">State</label>
+        <input name="StateHost" type="text" class="form-control" id="StateHost" placeholder="State" required>
+      </div>
+      <div class="form-group">
+        <label for="Zip">Zip Code</label>
+        <input name="ZipHost" type="text" class="form-control" id="ZipHost" placeholder="Zip" required>
       </div>
       <div class="form-group">
         <label for="Time">Date &amp; Time</label>
@@ -37,6 +49,59 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
+</div> -->
+
+<!-- Test block -->
+<div class="row" id="host">
+  <div class="col-xs-12">
+    <h3>Don't see your area? Host a donation center (with an organization, non-for-profit or a for-profit company willing to donate time; You don't have to be Puerto Rican to host)!</h3>
+    <form method="POST" action="/form/host-center" data-toggle="validator" role="form" id="host-center-form">
+      <div class="form-group">
+        <label for="FirstNameHost">First Name</label>
+        <input name="FirstNameHost" type="text" class="form-control" id="FirstNameHost" placeholder="First Name" required value="A">
+      </div>
+      <div class="form-group">
+        <label for="LastNameHost">Last Name</label>
+        <input name="LastNameHost" type="text" class="form-control" id="LastNameHost" placeholder="Last Name" required value="A">
+      </div>
+      <div class="form-group">
+        <label for="EmailHost">Email address</label>
+        <input name="EmailAddressHost" type="email" class="form-control" id="EmailHost" placeholder="Email" required value="A@A.com">
+      </div>
+      <div class="form-group">
+        <label for="TelephoneHost">Telephone</label>
+        <input name="TelephoneHost" type="tel" class="form-control" id="TelephoneHost" placeholder="Telephone" required value="123456789">
+      </div>
+      <div class="form-group">
+        <label for="StreetAddress">Street Address</label>
+        <input name="StreetAddressHost" type="text" class="form-control" id="StreetAddressHost" placeholder="Street Address" required value="A">
+      </div>
+      <div class="form-group">
+        <label for="City">City</label>
+        <input name="CityHost" type="text" class="form-control" id="CityHost" placeholder="City" required value="A">
+      </div>
+      <div class="form-group">
+        <label for="State">State</label>
+        <input name="StateHost" type="text" class="form-control" id="StateHost" placeholder="State" required value="A">
+      </div>
+      <div class="form-group">
+        <label for="Zip">Zip Code</label>
+        <input name="ZipHost" type="text" class="form-control" id="ZipHost" placeholder="Zip" required value="12345">
+      </div>
+      <div class="form-group">
+        <label for="Time">Date &amp; Time</label>
+        <input type="text" name="TimeHost" id="TimeHost" data-format="MM-DD-YYYY h:mm a" data-template="MM / DD / YYYY       hh : mm a" value="01/01/2017 08:30 pm">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input name="accept" type="checkbox" required checked> I understand that this information could be shared with third parties that would need my help and this is on a volunteer basis.
+        </label>
+      </div>
+      <p> By submitting, I accept to be contacted by website organizers if any doubts come up and accept that all donations will be FULLY used for Hurricane Relief in Puerto Rico (i.e. No personal profits)</p>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
 </div>
+
 <hr>
 {{/layout}}
