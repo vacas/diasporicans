@@ -10,6 +10,7 @@ const express = require('express'),
 // Static File
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../views')));
+// app.use(express.static(path.join(__dirname, '../views/layouts')));
 
 // Middleware
 app.use(bodyParser.json());
@@ -19,7 +20,8 @@ app.use(bodyParser.urlencoded());
 var hbs = exphbs.create({
     defaultLayout: 'main',
     partialsDir: [
-        'views/layouts/',
+        'views/layouts',
+        'views/layouts/partials',
     ]
 });
 
@@ -31,6 +33,9 @@ app.post('/form/host-center', routes);
 app.post('/form/donate-time', routes);
 app.post('/form/contactus', routes);
 app.get('/', routes);
+app.get('/maps', routes);
+app.get('/donations', routes);
+app.get('/contact', routes);
 
 // Listening to port
 app.listen(port, function () {

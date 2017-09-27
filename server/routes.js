@@ -28,6 +28,18 @@ router.get('/', function (req, res) {
     res.render('home');
 });
 
+router.get('/maps', function (req, res) {
+    res.render('maps');
+});
+
+router.get('/donations', function (req, res) {
+    res.render('donations');
+});
+
+router.get('/contact', function (req, res) {
+    res.render('contact');
+});
+
 
 // Form for Hosting a Donation Center
 router.post('/form/host-center', function(req, res){
