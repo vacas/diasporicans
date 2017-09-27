@@ -32,10 +32,11 @@ app.set('view engine', 'handlebars');
 app.post('/form/host-center', routes);
 app.post('/form/donate-time', routes);
 app.post('/form/contactus', routes);
-app.get('/', routes);
 app.get('/maps', routes);
 app.get('/donations', routes);
 app.get('/contact', routes);
+app.get('/toolsForPR', routes);
+app.get('/', routes);
 
 // Listening to port
 app.listen(port, function () {

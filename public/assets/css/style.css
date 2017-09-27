@@ -119,6 +119,39 @@ table, tbody, td {
   text-decoration: underline;
 }
 
+
+/*-------------------------------------------------------------------*/
+           /*Tweet FEMA*/
+/*-------------------------------------------------------------------*/
+
+#tweet-fema img {
+  margin: auto;
+  width: 100px;
+}
+
+.btn-tweet {
+  background-color: #08a0e9;
+  color: #fff;
+  border-color: #08a0e9;
+}
+
+.btn-tweet:hover {
+  background-color: #0084B4;
+  color: #fff;
+  border-color: #0084B4;
+}
+
+.btn-tweet:focus, .btn-tweet:active {
+  outline: none;
+  background-color: #E8F5FD;
+  color: #fff;
+  border-color: #E8F5FD;
+}
+
+.main-page-list li {
+  list-style: none;
+}
+
 /*-------------------------------------------------------------------*/
            /*Donation Map*/
 /*-------------------------------------------------------------------*/
@@ -227,4 +260,3 @@ footer {
 /*-------------------------------------------------------------------*/
            /*ANIMATIONS*/
 /*-------------------------------------------------------------------*/
-

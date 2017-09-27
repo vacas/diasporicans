@@ -40,6 +40,10 @@ router.get('/contact', function (req, res) {
     res.render('contact');
 });
 
+router.get('/toolsForPR', function (req, res) {
+    res.render('toolsForPR');
+});
+
 
 // Form for Hosting a Donation Center
 router.post('/form/host-center', function(req, res){
