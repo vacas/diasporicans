@@ -82,6 +82,25 @@ iframe {
   margin: 0 auto;
 }
 
+table {
+  width: 100%;
+  background-color: rgba(0,0,0,0.1);
+}
+
+table, tbody, td {
+  border: 1px grey solid;
+}
+
+.color-legend {
+  height: 10px;
+  width: 50px;
+  display: inline-grid;
+}
+
+.maria-tech-brigade-effort-link{
+  color: black;
+}
+
 .header-caption {
   text-decoration: underline;
 }
@@ -89,6 +108,12 @@ iframe {
 /*-------------------------------------------------------------------*/
            /*Donation Map*/
 /*-------------------------------------------------------------------*/
+
+.medium-image{
+  width: 100px;
+  height: auto;
+  margin-top: 0;
+}
 
 .diaspora-donation-map {
   margin: 50px auto;
@@ -99,6 +124,14 @@ iframe {
            /*PROJECTS*/
 /*-------------------------------------------------------------------*/
 
+
+#antennas-in-PR {
+  margin-bottom: 150px;
+}
+
+#antennas-in-PR > div {
+  height: 580px;
+}
 
 /*-------------------------------------------------------------------*/
            /*MEALS*/

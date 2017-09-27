@@ -44,6 +44,7 @@ router.post('/form/host-center', function(req, res){
     'telephone': req.body.TelephoneHost,
     'date': req.body.TimeHost,
     'location': req.body.LocationHost,
+    'created_date': new Date(),
     'accepted': accepted
   }
 
@@ -55,7 +56,8 @@ router.post('/form/host-center', function(req, res){
     text: JSON.stringify(result,null,2)
   };
 
-  // Setting options for delivery for sender
+
+  // // Setting options for delivery for sender
   const mailOptions_to_sender = {
     from: process.env.EMAIL,
     to: result.email,
@@ -99,7 +101,7 @@ router.post('/form/donate-time', function(req, res){
   if(req.body.accept === 'on'){
     accepted = true;
   }
-  
+
   // Getting details about form
   const result = {
     'first_name': req.body.FirstNameDonate,
@@ -108,6 +110,7 @@ router.post('/form/donate-time', function(req, res){
     'telephone': req.body.TelephoneDonate,
     'profession': req.body.ProfessionalDonate,
     'howtohelp': req.body.HowToHelp,
+    'created_date': new Date(),
     'accepted': accepted
   }
 
@@ -167,6 +170,7 @@ router.post('/form/contactus', function(req, res){
     'email': req.body.EmailAddressContact,
     'telephone': req.body.TelephoneContact,
     'profession': req.body.ProfessionalContact,
+    'created_date': new Date(),
     'message': req.body.MessageContact
   }
 
