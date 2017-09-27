@@ -2,6 +2,7 @@ const express = require('express'),
       path = require('path'),
       bodyParser = require('body-parser'),
       exphbs  = require('express-handlebars'),
+      layouts = require('handlebars-layouts'),
       app = express(),
       port = process.env.PORT || 3000,
       routes = require('./routes');

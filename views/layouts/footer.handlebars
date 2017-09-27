@@ -1,0 +1,27 @@
+ {{#> layout}}
+ <div class="row">
+        <div class="col-xs-12">
+          <footer>
+            This website is <a href="https://github.com/mfjv88/diasporicans">open-source</a> and not affiliated to any specific organization. Just an attempt to help out our island. Any help would help and gratefully accepted; You don't need to be Puerto Rican to do so.
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js" type="text/javascript"></script>
+    <script src="./assets/js/combodate.js" type="text/javascript"></script>
+    <script src="./assets/js/validator.min.js" type="text/javascript"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('#TimeHost').combodate({
+          minYear: 2017,
+          maxYear:2017,
+          smartDays: true
+        });
+      })
+    </script>
+  </body>
+</html>
+{{/layout}}
