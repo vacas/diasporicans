@@ -19,11 +19,37 @@
 
       <div class="form-group">
         <label for="TelephoneDonate">Telephone</label>
-        <input name="TelephoneDonate" type="number" class="form-control" id="TelephoneDonate" placeholder="Telephone">
+        <input name="TelephoneDonate" type="tel" class="form-control" id="TelephoneDonate" placeholder="Telephone">
       </div>
       <div class="form-group">
         <label for="ProfessionDonate">Profession</label>
-        <input name="ProfessionalDonate" type="text" class="form-control" id="ProfessionDonate" placeholder="Profession">
+        <select name="ProfessionalDonate" class="form-control" id="ProfessionDonate">
+    <option value="" disabled selected>Select your profession group</option>
+    <option value="Management">Management</option>
+    <option value="Business and Financial Operations">Business and Financial Operations</option>
+    <option value="Computer and Mathematical">Computer and Mathematical</option>
+    <option value="Architecture and Engineering">Architecture and Engineering</option>
+    <option value="Life, Physical, and Social Science">Life, Physical, and Social Science</option>
+    <option value="Community and Social Service">Community and Social Service</option>
+    <option value="Legal">Legal</option>
+    <option value="Education, Training, and Library">Education, Training, and Library</option>
+    <option value="Arts, Design, Entertainment, Sports, and Media">Arts, Design, Entertainment, Sports, and Media</option>
+    <option value="Healthcare Practitioners and Technical">Healthcare Practitioners and Technical</option>
+    <option value="Healthcare Support">Healthcare Support</option>
+    <option value="Protective Service">Protective Service</option>
+    <option value="Food Preparation and Serving Related">Food Preparation and Serving Related</option>
+    <option value="Building and Grounds Cleaning and Maintenance">Building and Grounds Cleaning and Maintenance</option>
+    <option value="Personal Care and Service">Personal Care and Service</option>
+    <option value="Sales and Related">Sales and Related</option>
+    <option value="Office and Administrative Support">Office and Administrative Support</option>
+    <option value="Farming, Fishing, and Forestry">Farming, Fishing, and Forestry</option>
+    <option value="Construction and Extraction">Construction and Extraction</option>
+    <option value="Installation, Maintenance, and Repair">Installation, Maintenance, and Repair</option>
+    <option value="Production">Production</option>
+    <option value="Transportation and Material Moving">Transportation and Material Moving</option>
+        <option value="Other">Other</option>
+        </select>
+        <small>List based on the <a href="https://www.bls.gov/oes/current/oes_stru.htm">Occupational Employment Statistics from the U.S. Department of Labor</a></small>
       </div>
       <div class="form-group">
         <label for="HowToHelpDonate">How would you like to help?</label>
