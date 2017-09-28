@@ -209,6 +209,10 @@ iframe.googleFinder {
            /*TESTIMONIALS*/
 /*-------------------------------------------------------------------*/
 
+.infogram-embed {
+  max-height: 40em;
+  overflow: scroll;
+}
 
 
 
