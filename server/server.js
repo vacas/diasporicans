@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../views')));
 
 // Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded( {extended: true }));
 
 // Handlebars config
 var hbs = exphbs.create({
