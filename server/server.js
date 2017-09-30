@@ -1,5 +1,6 @@
 const express = require('express'),
       path = require('path'),
+      compression = require('compression'),
       bodyParser = require('body-parser'),
       exphbs  = require('express-handlebars'),
       layouts = require('handlebars-layouts'),
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, '../views')));
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: true }));
+app.use(compression());
 
 // Handlebars config
 var hbs = exphbs.create({
