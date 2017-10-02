@@ -52,7 +52,6 @@ iframe {
 .nav-icons, .nav-text {
   color: white;
   font-size: 18px;
-  margin-right: 20px;
 }
 
 .navbar-nav>li>a.nav-text {
@@ -153,7 +152,7 @@ table, tbody, td {
   margin-top: 0;
 }
 
-.diaspora-donation-map {
+.google-map-container {
   margin: 50px auto;
   height: 480px;
 }
