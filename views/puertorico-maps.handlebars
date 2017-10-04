@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106831938-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-106831938-1');
+    </script>
+    <meta charset="utf-8">
+    <title>Diasporicans para Puerto Rico</title>
+    <style media="screen">
+      iframe {
+        max-width: 700px;
+        max-height: 500px;
+        margin: auto;
+        margin-top: 30px;
+      }
+      div.embed-container{
+        padding-bottom: 570px;
+      }
+    </style>
+  </head>
+  <body>
+    {{> antennasInPR}}
+    {{> atmsInPR}}
+    {{> uspsMap}}
+    {{> femaShelters}}
+    {{> locationsTakingCards}}
+    {{> openGasStationsMap}}
+  </body>
+</html>
