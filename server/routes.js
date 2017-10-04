@@ -44,6 +44,11 @@ router.get('/toolsForPR', function (req, res) {
     res.render('toolsForPR');
 });
 
+router.get('/pr', function (req, res) {
+    res.render('puertorico', {layout:false});
+    // console.log('hi');
+});
+
 
 // Form for Hosting a Donation Center
 router.post('/form/host-center', function(req, res){

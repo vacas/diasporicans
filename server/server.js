@@ -11,7 +11,7 @@ const express = require('express'),
 // Static File
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../views')));
-// app.use(express.static(path.join(__dirname, '../views/layouts')));
+app.use(express.static(path.join(__dirname, '../views/layouts')));
 
 // Middleware
 app.use(bodyParser.json());
@@ -34,6 +34,7 @@ app.set('view engine', 'handlebars');
 app.post('/form/host-center', routes);
 app.post('/form/donate-time', routes);
 app.post('/form/contactus', routes);
+app.get('/pr', routes)
 app.get('/maps', routes);
 app.get('/donations', routes);
 app.get('/contact', routes);
