@@ -22,9 +22,12 @@
     "compression": "^1.7.1",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
+    "express-flash": "0.0.2",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
     "handlebars": "^4.0.10",
     "handlebars-layouts": "^3.1.4",
+    "lob": "^4.1.1",
     "mongoose": "^4.10.2",
     "nodemailer": "^4.1.0",
     "nodemon": "^1.12.1"

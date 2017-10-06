@@ -2,11 +2,16 @@ const express = require('express'),
       path = require('path'),
       bodyParser = require('body-parser'),
       nodemailer = require('nodemailer'),
+      // flash = require('express-flash'),
       app = express(),
       env = require('dotenv').config(),
       router = require('express').Router();
       Host = require('./db/host'),
       Donate = require('./db/donate');
+
+const Lob = require('lob')(process.env.LOB_LIVE_KEY, {
+  apiVersion: '2017-09-08'
+});
 
 // Configuration for nodemailer
 const transporter = nodemailer.createTransport({
@@ -59,6 +64,10 @@ router.get('/pr/maps', function (req, res) {
 
 // Form for Hosting a Donation Center
 router.post('/form/host-center', function(req, res){
+
+  req.flash('error', 'Something went wrong');
+  res.redirect('/donations');
+
   let accepted = false;
   if(req.body.accept === 'on'){
     accepted = true;
@@ -71,10 +80,26 @@ router.post('/form/host-center', function(req, res){
     'email': req.body.EmailAddressHost,
     'telephone': req.body.TelephoneHost,
     'date': req.body.TimeHost,
-    'location': req.body.LocationHost,
+    'location': req.body.StreetAddressHost + ', ' + req.body.CityHost + ' ' + req.body.StateHost + ' ' + req.body.ZipHost,
     'created_date': new Date(),
     'accepted': accepted
-  }
+  };
+
+  // Verifying with Lob
+  Lob.usVerifications.verify({
+    primary_line: req.body.StreetAddressHost,
+    city: req.body.CityHost,
+    state: req.body.StateHost,
+    zip_code: req.body.ZipHost
+  }, function (error, response) {
+    console.log(error, response);
+    if (response.deliverability === 'no_match') {
+      // res.flash('error', 'Something went wrong');
+      // res.redirect('/donations');
+      // res.render('/donations', {error: req.flash('error')});
+    }
+  });
+
 
   // Setting options for delivery for Diasporicans
   const mailOptions_to_diasporicans = {
@@ -117,7 +142,7 @@ router.post('/form/host-center', function(req, res){
       res.json({ message: 'Something went wrong'});
       res.send(err);
    } else {
-     res.status(202).redirect('/');
+     res.status(202).redirect('/donations');
    }
   })
 })

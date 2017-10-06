@@ -4,9 +4,13 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       exphbs  = require('express-handlebars'),
       layouts = require('handlebars-layouts'),
+      flash = require('express-flash'),
+      session = require('express-session'),
       app = express(),
       port = process.env.PORT || 3000,
       routes = require('./routes');
+
+const sessionStore = new session.MemoryStore;
 
 // Static File
 app.use(express.static(path.join(__dirname, '../public')));
@@ -17,6 +21,21 @@ app.use(express.static(path.join(__dirname, '../views/layouts')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: true }));
 app.use(compression());
+app.use(session({
+    cookie: { maxAge: 60000 },
+    store: sessionStore,
+    saveUninitialized: true,
+    resave: 'true',
+    secret: 'secret'
+}));
+app.use(flash());
+
+// app.use(function(req, res, next){
+//     // if there's a flash message in the session request, make it available in the response, then delete it
+//     res.locals.sessionFlash = req.session.sessionFlash;
+//     delete req.session.sessionFlash;
+//     next();
+// });
 
 // Handlebars config
 var hbs = exphbs.create({

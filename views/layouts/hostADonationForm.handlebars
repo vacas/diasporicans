@@ -3,6 +3,9 @@
 <div class="row" id="host">
   <div class="col-xs-12">
     <h3>Don't see your area? Host a donation center (with an organization, non-for-profit or a for-profit company willing to donate time; You don't have to be Puerto Rican to host)!</h3>
+    {{#if error}}
+      {{error}}
+    {{/if}}
     <form method="POST" action="/form/host-center" data-toggle="validator" role="form" id="host-center-form">
       <div class="form-group">
         <label for="FirstNameHost">First Name</label>
@@ -21,8 +24,20 @@
         <input name="TelephoneHost" type="tel" class="form-control" id="TelephoneHost" placeholder="Telephone" required>
       </div>
       <div class="form-group">
-        <label for="Location">Location</label>
-        <input name="LocationHost" type="text" class="form-control" id="LocationHost" placeholder="Location" required>
+        <label for="StreetAddress">Street Address</label>
+        <input name="StreetAddressHost" type="text" class="form-control" id="StreetAddressHost" placeholder="Street Address" required>
+      </div>
+      <div class="form-group">
+        <label for="City">City</label>
+        <input name="CityHost" type="text" class="form-control" id="CityHost" placeholder="City" required>
+      </div>
+      <div class="form-group">
+        <label for="State">State</label>
+        <input name="StateHost" type="text" class="form-control" id="StateHost" placeholder="State" required>
+      </div>
+      <div class="form-group">
+        <label for="Zip">Zip Code</label>
+        <input name="ZipHost" type="text" class="form-control" id="ZipHost" placeholder="Zip" required>
       </div>
       <div class="form-group">
         <label for="Time">Date &amp; Time</label>
