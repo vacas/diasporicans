@@ -2,16 +2,13 @@ const express = require('express'),
       path = require('path'),
       bodyParser = require('body-parser'),
       nodemailer = require('nodemailer'),
-      // flash = require('express-flash'),
       app = express(),
       env = require('dotenv').config(),
       router = require('express').Router();
       Host = require('./db/host'),
       Donate = require('./db/donate');
 
-const Lob = require('lob')(process.env.LOB_LIVE_KEY, {
-  apiVersion: '2017-09-08'
-});
+const Lob = require('lob')(process.env.LOB_LIVE_KEY);
 
 // Configuration for nodemailer
 const transporter = nodemailer.createTransport({
@@ -65,87 +62,93 @@ router.get('/pr/maps', function (req, res) {
 // Form for Hosting a Donation Center
 router.post('/form/host-center', function(req, res){
 
-  req.flash('error', 'Something went wrong');
-  res.redirect('/donations');
-
   let accepted = false;
   if(req.body.accept === 'on'){
     accepted = true;
   }
 
-// Getting details about form
-  const result = {
-    'first_name': req.body.FirstNameHost,
-    'last_name': req.body.LastNameHost,
-    'email': req.body.EmailAddressHost,
-    'telephone': req.body.TelephoneHost,
-    'date': req.body.TimeHost,
-    'location': req.body.StreetAddressHost + ', ' + req.body.CityHost + ' ' + req.body.StateHost + ' ' + req.body.ZipHost,
-    'created_date': new Date(),
-    'accepted': accepted
-  };
+  if(req.body.residence === 'true'){
+    req.flash('error', 'Address cannot be a residence.');
+    res.redirect('/donations');
+  } else {
+    // Getting details about form
+    const result = {
+      'first_name': req.body.FirstNameHost,
+      'last_name': req.body.LastNameHost,
+      'email': req.body.EmailAddressHost,
+      'telephone': req.body.TelephoneHost,
+      'date_from': req.body.FromTimeHost,
+      'date_to': req.body.ToTimeHost,
+      'location': req.body.StreetAddressHost + ', ' + req.body.CityHost + ' ' + req.body.StateHost + ' ' + req.body.ZipHost,
+      'created_date': new Date(),
+      'accepted': accepted
+    };
 
-  // Verifying with Lob
-  Lob.usVerifications.verify({
-    primary_line: req.body.StreetAddressHost,
-    city: req.body.CityHost,
-    state: req.body.StateHost,
-    zip_code: req.body.ZipHost
-  }, function (error, response) {
-    console.log(error, response);
-    if (response.deliverability === 'no_match') {
-      // res.flash('error', 'Something went wrong');
-      // res.redirect('/donations');
-      // res.render('/donations', {error: req.flash('error')});
-    }
-  });
-
-
-  // Setting options for delivery for Diasporicans
-  const mailOptions_to_diasporicans = {
-    from: process.env.EMAIL,
-    to: process.env.EMAIL,
-    subject: 'Host Center',
-    text: JSON.stringify(result,null,2)
-  };
+    // Verifying with Lob
+    Lob.usVerifications.verify({
+      primary_line: req.body.StreetAddressHost,
+      city: req.body.CityHost,
+      state: req.body.StateHost,
+      zip_code: req.body.ZipHost
+    }, function (error, response) {
+      if (response.components.address_type === 'residential') {
+        req.flash('error', 'Address cannot be a residence.');
+        res.redirect('/donations');
+      }
+      else if (response.deliverability === 'no_match' || response.deliverability === 'undeliverable') {
+        req.flash('error', 'Please verify the address is correct.');
+        res.redirect('/donations');
+      }
+    });
 
 
-  // // Setting options for delivery for sender
-  const mailOptions_to_sender = {
-    from: process.env.EMAIL,
-    to: result.email,
-    subject: 'Thank you for contacting us',
-    html: message('Hosting a Donation Center')
-  };
+    // Setting options for delivery for Diasporicans
+    const mailOptions_to_diasporicans = {
+      from: process.env.EMAIL,
+      to: process.env.EMAIL,
+      subject: 'Host Center',
+      text: JSON.stringify(result,null,2)
+    };
 
-  // Deliver message to Diasporicans
-  transporter.sendMail(mailOptions_to_diasporicans, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
 
-  // Deliver message to sender
-  transporter.sendMail(mailOptions_to_sender, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
+    // // Setting options for delivery for sender
+    const mailOptions_to_sender = {
+      from: process.env.EMAIL,
+      to: result.email,
+      subject: 'Thank you for contacting us',
+      html: message('Hosting a Donation Center')
+    };
 
-  // Store in DB
-  Host.create(result,function(err, data){
-  if (err) {
-      res.json({ message: 'Something went wrong'});
-      res.send(err);
-   } else {
-     res.status(202).redirect('/donations');
-   }
-  })
-})
+    // Deliver message to Diasporicans
+    transporter.sendMail(mailOptions_to_diasporicans, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+
+    // Deliver message to sender
+    transporter.sendMail(mailOptions_to_sender, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+
+    // Store in DB
+    Host.create(result,function(err, data){
+    if (err) {
+      req.flash('error', 'Something went wrong.');
+      res.redirect('/donations');
+     } else {
+       req.flash('success', 'Your submission has been completed.');
+       res.redirect('/donations');
+     }
+    })
+  }
+});
 
 
 // Form to Donate Time

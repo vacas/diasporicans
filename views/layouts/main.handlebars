@@ -24,11 +24,13 @@
   </head>
   <body>
     {{> navbar}}
+
     <div class="container">
+      
     {{{body}}}
 
     {{> mariaTechBrigade}}
-    
+
         <div class="row">
             <div class="col-xs-12">
               <footer>
@@ -46,7 +48,12 @@
 
     <script>
       $(document).ready(function(){
-        $('#TimeHost').combodate({
+        $('#FromTimeHost').combodate({
+          minYear: 2017,
+          maxYear:2017,
+          smartDays: true
+        });
+        $('#ToTimeHost').combodate({
           minYear: 2017,
           maxYear:2017,
           smartDays: true

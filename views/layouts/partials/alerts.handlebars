@@ -1,0 +1,10 @@
+{{#> layout}}
+{{#if messages.error}}
+  <div class="alert alert-danger">
+    {{messages.error}}
+  </div>
+{{else if messages.success}}
+  <div class="alert alert-success">
+    {{messages.success}}
+  </div>
+{{/if}}{{/layout}}
