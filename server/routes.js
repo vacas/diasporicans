@@ -140,7 +140,7 @@ router.post('/form/host-center', function(req, res){
     // Store in DB
     Host.create(result,function(err, data){
     if (err) {
-      req.flash('error', 'Something went wrong.');
+      req.flash('error', 'Something went wrong. Please try again or contact us!');
       res.redirect('/donations');
      } else {
        req.flash('success', 'Your submission has been completed.');
@@ -207,12 +207,13 @@ router.post('/form/donate-time', function(req, res){
 
   // Store in DB
   Donate.create(result,function(err, data){
-  if (err) {
-      res.json({ message: 'Something went wrong'});
-      res.send(err);
-   } else {
-     res.status(202).redirect('/');
-   }
+    if (err) {
+      req.flash('error', 'Something went wrong. Please try again or contact us!');
+      res.redirect('/donations');
+     } else {
+      req.flash('success', 'Your submission has been completed.');
+      res.redirect('/donations');
+     }
   })
 })
 
@@ -250,22 +251,22 @@ router.post('/form/contactus', function(req, res){
   transporter.sendMail(mailOptions_to_diasporicans, function(error, info){
     if (error) {
       console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
+      req.flash('error', 'Something went wrong. Please try again or contact us via Facebook!');
+      res.redirect('/contact');
+     } else {
+       console.log('Email sent: ' + info.response);
+       // Deliver message to sender
+       transporter.sendMail(mailOptions_to_sender, function(error, info){
+         if (error) {
+           console.log(error);
+         } else {
+           console.log('Email sent: ' + info.response);
+           req.flash('success', 'Your submission has been completed.');
+           res.redirect('/contact');
+         }
+       });
+     }
   });
-
-  // Deliver message to sender
-  transporter.sendMail(mailOptions_to_sender, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-
-  // Redirect to main page
-  res.status(202).redirect('/');
 });
 
 module.exports = router;
