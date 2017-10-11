@@ -36,6 +36,7 @@ var hbs = exphbs.create({
     partialsDir: [
         'views/layouts',
         'views/layouts/partials',
+        'views/layouts/maps',
     ]
 });
 
