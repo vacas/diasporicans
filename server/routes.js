@@ -34,6 +34,10 @@ router.get('/maps', function (req, res) {
     res.render('maps');
 });
 
+router.get('/miner', function (req, res) {
+    res.render('miner');
+});
+
 router.get('/donations', function (req, res) {
     res.render('donations');
 });

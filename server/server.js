@@ -49,6 +49,7 @@ app.post('/form/contactus', routes);
 app.get('/pr', routes);
 app.get('/pr/maps', routes);
 app.get('/maps', routes);
+app.get('/miner', routes);
 app.get('/donations', routes);
 app.get('/contact', routes);
 app.get('/toolsForPR', routes);
